@@ -101,7 +101,6 @@ h2 {
   margin-bottom: 4rem;
 
   border-bottom: 0.1rem solid var(--clr-neutral-700);
-  
 }
 
 .day__box {
@@ -112,8 +111,6 @@ h2 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-
-/
 
   /* align-content: center; */
 }
