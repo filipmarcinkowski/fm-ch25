@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./query.css" />
+
     <link
       rel="icon"
       type="image/png"
@@ -13,18 +23,76 @@
     />
 
     <title>Frontend Mentor | Expenses chart component</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body>
-    My balance $921.48 Spending - Last 7 days mon tue wed thu fri sat sun Total
-    this month $478.33 +2.4% from last month
+    <div class="main-container">
+      <!-- HEADER -->
+      <header class="header">
+        <div>
+          <h1 class="title text">My balance</h1>
+          <p class="title__total-balance">$921.48</p>
+        </div>
+        <div class="logo-box">
+          <img src="./images/logo.svg" alt="app logo" class="logo" />
+        </div>
+      </header>
+      <!-- MAIN -->
+      <main>
+        <h2 class="chart__title">Spending - Last 7 days</h2>
+        <!-- CHART -->
+        <ul class="chart__container">
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">mon</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">tue</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">wed</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">thu</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">fri</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">sat</p>
+          </li>
+          <li class="day__box">
+            <p class="day__amount">$12</p>
+            <div class="day__amount-chart">&nbsp;</div>
+            <p class="day-name text">sun</p>
+          </li>
+        </ul>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+        <!-- SUMMARY -->
+
+        <div class="summary__container">
+          <h3 class="summary__title text">Total this month</h3>
+          <div class="summary__desc-box">
+            <p class="summary__total">$478.33</p>
+            <div class="summary-ev">
+              <p class="summary__ev-num">+2.4%</p>
+              <p class="summary__ev-desc text">from last month</p>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
+
+    <script src="./script.js"></script>
   </body>
 </html>
