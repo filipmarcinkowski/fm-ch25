@@ -136,6 +136,13 @@ h2 {
   background-color: var(--clr-primary-h);
 }
 
+.highest {
+  background-color: var(--clr-secondary);
+}
+.highest:hover {
+  background-color: var(--clr-secondary-h);
+}
+
 /* SUMMARY */
 
 h3 {

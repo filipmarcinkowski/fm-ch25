@@ -10,30 +10,40 @@ const chartData = async function () {
     const data = await res.json();
     console.log(data);
 
-    weekChart(data);
-  } catch {
-    console.error('error????? :(');
+    myChart(data);
+  } catch (err) {
+    console.error(err);
   }
 };
 
 chartData();
 
-const weekChart = function (d) {
-  day.forEach(function (el, i) {
-    const dayAmount = el.querySelector('.day__amount');
-    const dayChart = el.querySelector('.day__amount-chart');
-    const dayName = el.querySelector('.day-name');
+const chart = document.querySelector('.chart__container');
 
-    dayChart.style.height = `${d[i].amount / 4}rem`;
-    dayAmount.textContent = d[i].amount;
-    dayName.textContent = d[i].day;
+const myChart = function (data) {
+  let highestValue = 0;
+  let highestValueDay;
+
+  data.forEach(function (data, i) {
+    const html = `
+            <li class="day__box">
+                <p class="day__amount">${data.amount}</p>
+                <div class="day__amount-chart day-${i}">&nbsp;</div>
+                <p class="day-name text">${data.day}</p>
+            </li>
+                `;
+
+    chart.insertAdjacentHTML('beforeend', html);
+
+    const dayChart = document.querySelector(`.day-${i}`);
+    dayChart.style.height = `${data.amount / 4}rem`;
   });
-};
 
-const html = `
-<li class="day__box">
-            <p class="day__amount">${data.amount}</p>
-            <div class="day__amount-chart">&nbsp;</div>
-            <p class="day-name text">${data.day}</p>
-          </li>
-`;
+  //   if (data.amount > highestValue) {
+  //     highestValue = data.amount;
+  //     highestValueDay = data;
+  //   }
+
+  //   const max = document.querySelector('.day__amount-chart');
+  //   max.classList.add('highest');
+};
