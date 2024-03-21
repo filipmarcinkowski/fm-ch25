@@ -37,13 +37,12 @@ const myChart = function (data) {
 
     const dayChart = document.querySelector(`.day-${i}`);
     dayChart.style.height = `${data.amount / 4}rem`;
+
+    if (data.amount > highestValue) {
+      highestValue = data.amount;
+      highestValueDay = dayChart;
+    }
   });
 
-  //   if (data.amount > highestValue) {
-  //     highestValue = data.amount;
-  //     highestValueDay = data;
-  //   }
-
-  //   const max = document.querySelector('.day__amount-chart');
-  //   max.classList.add('highest');
+  highestValueDay.classList.add('highest');
 };
