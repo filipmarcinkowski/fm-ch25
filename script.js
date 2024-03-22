@@ -1,15 +1,11 @@
 'use strict';
-
-const day = document.querySelectorAll('.day__box');
-
+const chart = document.querySelector('.chart__container');
 const URL = './data.json';
 
 const chartData = async function () {
   try {
     const res = await fetch(URL);
     const data = await res.json();
-    console.log(data);
-
     myChart(data);
   } catch (err) {
     console.error(err);
@@ -18,8 +14,6 @@ const chartData = async function () {
 
 chartData();
 
-const chart = document.querySelector('.chart__container');
-
 const myChart = function (data) {
   let highestValue = 0;
   let highestValueDay;
@@ -27,7 +21,7 @@ const myChart = function (data) {
   data.forEach(function (data, i) {
     const html = `
             <li class="day__box">
-                <p class="day__amount">${data.amount}</p>
+                <p class="day__amount hidden">$${data.amount}</p>
                 <div class="day__amount-chart day-${i}">&nbsp;</div>
                 <p class="day-name text">${data.day}</p>
             </li>
@@ -45,4 +39,22 @@ const myChart = function (data) {
   });
 
   highestValueDay.classList.add('highest');
+
+  // HOVER AND SHOW VALUES
+
+  const columns = document.querySelectorAll('.day__amount-chart');
+
+  const showValue = function () {
+    const value = this.parentElement.querySelector('.day__amount');
+    value.classList.remove('hidden');
+  };
+  const hideValue = function () {
+    const value = this.parentElement.querySelector('.day__amount');
+    value.classList.add('hidden');
+  };
+
+  columns.forEach(function (column) {
+    column.addEventListener('mouseover', showValue);
+    column.addEventListener('mouseout', hideValue);
+  });
 };

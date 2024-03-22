@@ -112,6 +112,8 @@ h2 {
   justify-content: center;
   gap: 1rem;
 
+  position: relative;
+
   /* align-content: center; */
 }
 
@@ -121,6 +123,9 @@ h2 {
   color: var(--clr-neutral-700);
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
+
+  position: absolute;
+  top: -4rem;
 }
 
 .day__amount-chart {
@@ -168,4 +173,8 @@ h3 {
 
 .summary__ev-num {
   font-weight: 700;
+}
+
+.hidden {
+  display: none;
 }
