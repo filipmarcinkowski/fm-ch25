@@ -30,7 +30,7 @@ const myChart = function (data) {
     chart.insertAdjacentHTML('beforeend', html);
 
     const dayChart = document.querySelector(`.day-${i}`);
-    dayChart.style.height = `${data.amount / 4}rem`;
+    dayChart.style.height = `${data.amount / 3.5}rem`;
 
     if (data.amount > highestValue) {
       highestValue = data.amount;
